@@ -28,6 +28,9 @@
         <activity
             android:name=".UpdateActivity"
             android:screenOrientation="fullSensor"/>
+        <activity
+            android:name=".GameScreen"
+            android:screenOrientation="fullSensor"></activity>
     </application>
 
 </manifest>

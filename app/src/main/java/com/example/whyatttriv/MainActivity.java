@@ -1,13 +1,13 @@
 package com.example.whyatttriv;
 
-
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
@@ -67,10 +67,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private class ButtonHandler implements View.OnClickListener {
-        public void onClick( View v ) {
-
-        }
+    public void changeScreen( View v ) {
+        Intent myIntent = new Intent(this, GameScreen.class);
+        this.startActivity(myIntent);
     }
+
 
 }

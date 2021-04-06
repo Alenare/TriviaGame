@@ -33,7 +33,6 @@ public class UpdateActivity extends AppCompatActivity  {
         ArrayList<Trivia> triv = dbManager.selectAll( );
 
         if( triv.size( ) > 0 ) {
-            // create ScrollView and GridLayout
             ScrollView scrollView = new ScrollView( this );
             GridLayout grid = new GridLayout( this );
             grid.setRowCount( triv.size( ));
@@ -107,6 +106,7 @@ public class UpdateActivity extends AppCompatActivity  {
             scrollView.addView( grid );
             setContentView( scrollView );
         }
+            // create ScrollView and GridLayout
     }
 
     private class ButtonHandler implements View.OnClickListener {

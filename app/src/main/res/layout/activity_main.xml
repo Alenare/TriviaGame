@@ -30,7 +30,7 @@
         android:paddingRight="30dp"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
-        android:onClick="goBack"
+        android:onClick="changeScreen"
         android:text="Press to Play"/>
 
 

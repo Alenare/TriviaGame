@@ -2,6 +2,7 @@ package com.example.whyatttriv;
 
 import android.os.Bundle;
 import android.view.View;
+import android.content.Intent;
 import android.widget.EditText;
 import android.widget.Toast;
 
