@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         dbManager = new DatabaseManager(this);
-        dbManager.deleteRecords();
+        dbManager.DeleteRecords();
         Trivia trivia = new Trivia(0,"What is the inside color of a kiwi?","Red","Yellow","Green","White","Green");
         dbManager.insert(trivia);
         trivia = new Trivia(1,"What is the color of a guava?","Pink","Green","Orange","Orange-Red","Pink");

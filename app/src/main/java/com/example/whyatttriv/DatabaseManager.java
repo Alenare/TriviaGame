@@ -105,7 +105,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
         return trivia;
     }
 
-    public void deleteRecords(){
+    public void DeleteRecords(){
         SQLiteDatabase db = this.getWritableDatabase( );
         db.execSQL("DELETE FROM " + TABLE_TRIVIA);
         db.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + TABLE_TRIVIA + "'");
