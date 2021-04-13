@@ -112,7 +112,6 @@ public class UpdateActivity extends AppCompatActivity  {
     private class ButtonHandler implements View.OnClickListener {
         public void onClick( View v ) {
             int topicId = v.getId( );
-            System.out.println("We got washed");
             EditText theTopic = ( EditText ) findViewById( 10 * topicId );
             EditText option1 = ( EditText ) findViewById( 10 * topicId + 1 );
             EditText option2 = ( EditText ) findViewById( 10 * topicId + 2 );
@@ -131,7 +130,7 @@ public class UpdateActivity extends AppCompatActivity  {
             // update candy in database
 
             dbManager.updateById(topicId,newTopic,oP1,oP2,oP3,oP4,ans);
-            Toast.makeText( UpdateActivity.this, "Candy updated", Toast.LENGTH_SHORT ).show( );
+            Toast.makeText( UpdateActivity.this, "Topic updated", Toast.LENGTH_SHORT ).show( );
             updateView();
         }
     }

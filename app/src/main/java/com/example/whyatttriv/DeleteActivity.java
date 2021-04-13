@@ -13,9 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-//import android.support.v7.app.AppCompatActivity;
-//had to add this, different from book
-
 public class DeleteActivity extends AppCompatActivity {
     private DatabaseManager dbManager;
 

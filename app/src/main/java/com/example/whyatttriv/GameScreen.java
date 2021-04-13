@@ -60,6 +60,7 @@ public class GameScreen extends AppCompatActivity   {
     public void QuestionView(){
         ArrayList<Trivia> triv = dbManager.selectAll( );
         numOfQuestions = triv.size();
+        String ansCheck = "";
         Trivia tAccess = null;
         int count = 0;
         int rand = 0;
@@ -89,7 +90,7 @@ public class GameScreen extends AppCompatActivity   {
                 }
             }
 
-        if(numOfQuestions > 0 && qAnswers < numOfQuestions) {
+        if(numOfQuestions > 0) {
 
             LinearLayout.LayoutParams CParam = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             CParam.gravity = Gravity.CENTER;
@@ -142,18 +143,31 @@ public class GameScreen extends AppCompatActivity   {
             linLayout.addView(question, LParam);
 
             for(int i = 0; i < 4; i++){
+                ansCheck = tAccess.getAns();
                 choices = new Button(this);
                 choices.setBackgroundResource(R.drawable.mybutton1);
                 choices.setTextColor(Color.parseColor("#FFFFFF"));
                 choices.setTextSize(20);
                 choices.setLayoutParams(firstView);
                 if(i == 0) {
+                    if(hasSelect == true && ansCheck.equals(tAccess.getOp1())){
+                        choices.setBackgroundColor(Color.parseColor("#0000FF"));
+                    }
                     choices.setText(tAccess.getOp1());
                 }else if(i == 1){
+                    if(hasSelect == true && ansCheck.equals(tAccess.getOp2())){
+                        choices.setBackgroundColor(Color.parseColor("#0000FF"));
+                    }
                     choices.setText(tAccess.getOp2());
                 }else if(i == 2){
+                    if(hasSelect == true && ansCheck.equals(tAccess.getOp3())){
+                        choices.setBackgroundColor(Color.parseColor("#0000FF"));
+                    }
                     choices.setText(tAccess.getOp3());
                 }else if(i == 3){
+                    if(hasSelect == true && ansCheck.equals(tAccess.getOp4())){
+                        choices.setBackgroundColor(Color.parseColor("#0000FF"));
+                    }
                     choices.setText(tAccess.getOp4());
                 }
                 if (hasSelect == false) {
@@ -254,7 +268,7 @@ public class GameScreen extends AppCompatActivity   {
                 arPosition++;
                 QuestionView();
            }else if(text.equals("Next")){
-                if(questionNum == numOfQuestions){
+                if(qAnswers == numOfQuestions){
                     ResultView();
                 }else{
                     hasSelect = false;

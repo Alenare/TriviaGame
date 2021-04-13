@@ -25,10 +25,9 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     public void onCreate( SQLiteDatabase db ) {
         // build sql create statement
-        onUpgrade(db,DATABASE_VERSION,0);
 
         String sqlCreate = "create table " + TABLE_TRIVIA + "( " + ID;
-        sqlCreate += " integer, " + Topic;
+        sqlCreate += " integer primary key autoincrement, " + Topic;
         sqlCreate += " text, " + Option1;
         sqlCreate += " text, " + Option2;
         sqlCreate += " text, " + Option3;
