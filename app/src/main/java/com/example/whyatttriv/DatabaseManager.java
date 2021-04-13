@@ -25,9 +25,10 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     public void onCreate( SQLiteDatabase db ) {
         // build sql create statement
+        onUpgrade(db,DATABASE_VERSION,0);
 
         String sqlCreate = "create table " + TABLE_TRIVIA + "( " + ID;
-        sqlCreate += " integer primary key autoincrement, " + Topic;
+        sqlCreate += " integer, " + Topic;
         sqlCreate += " text, " + Option1;
         sqlCreate += " text, " + Option2;
         sqlCreate += " text, " + Option3;
@@ -40,7 +41,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     public void onUpgrade( SQLiteDatabase db,
                            int oldVersion, int newVersion ) {
         // Drop old table if it exists
-        db.execSQL( "drop table if exists " + TABLE_TRIVIA );
+        db.execSQL( "drop table if exists " + TABLE_TRIVIA);
         // Re-create tables
         onCreate( db );
     }

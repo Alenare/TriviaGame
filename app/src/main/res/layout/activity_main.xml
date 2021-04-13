@@ -21,18 +21,28 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <Button
+    <TextView
+        android:id="@+id/fruit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/button_add"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center"
-        android:onClick="changeScreen"
-        android:text="Press to Play"/>
+        android:text="Fruits Trivia"
+        android:textSize="40dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fruit"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:onClick="changeScreen"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="Press to Play" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
